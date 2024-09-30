@@ -1,0 +1,19 @@
+{
+    "name": "nganga/gitexercise1",
+    "description": "A registration system using PHP and MySQL with email verification.",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nganga\\Gitexercise1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "iannganga154@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
