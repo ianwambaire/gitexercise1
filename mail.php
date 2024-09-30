@@ -30,10 +30,4 @@ function send_welcome_email($to_email, $username) {
         return false;
     }
 }
-
-if (send_welcome_email("your-email@example.com", "Test User")) {
-    echo "Mail sent.";
-} else {
-    echo "Mail not sent.";
-}
 ?>
