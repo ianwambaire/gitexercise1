@@ -25,7 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$username, $email, $hashed_password]);
-            $success = 'You have successfully registered!';
+
+        
+            include('mail.php');
+            $mail_success = send_welcome_email($email, $username);
+
+            if ($mail_success) {
+                $success = 'You have successfully registered! A confirmation email has been sent to you.';
+            } else {
+                $errors[] = 'Registration successful, but failed to send email.';
+            }
         }
     }
 }
